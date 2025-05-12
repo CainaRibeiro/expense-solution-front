@@ -1,0 +1,14 @@
+.login-input {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.login-input > input {
+  max-height: 20px;
+}
+
+.login-button {
+  display: flex;
+  justify-content: flex-end;
+}
