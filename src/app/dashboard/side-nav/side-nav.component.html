@@ -1,0 +1,17 @@
+<div class="main-content">
+  <h1>Bem-vindo ao painel</h1>
+  <p>Aqui fica o conteúdo da página.</p>
+</div>
+
+<nav *ngIf="canSeeOptions()">
+  <div>
+    <a href="#">Despesas</a>
+    <button *ngIf="authService.canRegisterExpense()" (click)="navigateToRegisterExpense()">Cadastrar</button>
+    <a *ngIf="authService.canSeeRequests()">Solicitações</a>
+    <a *ngIf="authService.canGetReport()" href="#">Relatórios</a>
+  </div>
+  <div>
+    <p>{{ getUsername() }}</p>
+    <button (click)="authService.logout()">logout</button>
+  </div>
+</nav>

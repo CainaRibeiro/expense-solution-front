@@ -1,0 +1,23 @@
+<h2>Despesas Cadastradas</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Funcionário</th>
+      <th>Valor</th>
+      <th>Descrição</th>
+      <th>Tipo</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let expense of expenses">
+      <td>{{ formatDate(expense.createdAt) }}</td>
+      <td>{{ expense.userId }}</td>
+      <td>{{ expense.value | currency:'BRL' }}</td>
+      <td>{{ expense.description }}</td>
+      <td>{{ expense.type }}</td>
+      <td>{{ expenseStatus(expense.status) }}</td>
+    </tr>
+  </tbody>
+</table>

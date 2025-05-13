@@ -27,6 +27,7 @@ export class LoginComponent {
       localStorage.setItem('isLogged', 'true');
       localStorage.setItem('role', this.service.roleMapper(decodedToken.role));
       localStorage.setItem('userId', decodedToken.userId.toString());
+      localStorage.setItem('username', decodedToken.username);
       this.resetForm();
       this.router.navigate(['/dashboard'])
     } catch (error) {

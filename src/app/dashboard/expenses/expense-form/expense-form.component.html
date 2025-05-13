@@ -1,0 +1,18 @@
+<form (ngSubmit)="createExpense()" class="expense-form">
+  <h1>Cadastrar Despesa</h1>
+  <div class="expense-input">
+    <p>Reembolsável: </p>
+    <input [(ngModel)]="type" type="type" name="type">
+    <p>Valor: </p>
+    <input [(ngModel)]="value" type="number" name="value">
+    <p>Comprovante: </p>
+    <input [(ngModel)]="receipt" type="text" name="rececipt">
+  </div>
+  <div class="expense-input">
+    <p>Descrição: </p>
+    <input [(ngModel)]="description" type="text" name="description">
+  </div>
+  <div>
+    <input type="submit" value="Submit">
+  </div>
+</form>
