@@ -8,7 +8,7 @@
     <a href="#">Despesas</a>
     <button *ngIf="authService.canRegisterExpense()" (click)="navigateToRegisterExpense()">Cadastrar</button>
     <a *ngIf="authService.canSeeRequests()">Solicitações</a>
-    <a *ngIf="authService.canGetReport()" href="#">Relatórios</a>
+    <button *ngIf="authService.canGetReport()" (click)="navigateToReports()">Relatórios</button>
   </div>
   <div>
     <p>{{ getUsername() }}</p>

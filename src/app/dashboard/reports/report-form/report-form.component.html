@@ -1,0 +1,12 @@
+<form (ngSubmit)="generateReport()" class="report-form">
+  <h1>Emitir Relatório</h1>
+  <div class="report-input">
+    <p>De: </p>
+    <input [(ngModel)]="startAt" type="date" name="startAt">
+    <p>Até: </p>
+    <input [(ngModel)]="endAt" type="date" name="endAt">
+  </div>
+  <div>
+    <input type="submit" value="Emitir">
+  </div>
+</form>

@@ -1,0 +1,24 @@
+<div *ngIf="reports.length > 0 else noReports">
+  <h2>Despesas Cadastradas</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Período</th>
+        <th>Total de despesas</th>
+        <th>Total de reembolsos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let report of reports">
+        <td>{{ report.period }}</td>
+        <td>{{ report.totalExpenses | currency:'BRL' }}</td>
+        <td>{{ report.totalRefunds | currency:'BRL' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<ng-template #noReports>
+  <p>Nenhum relatório cadastrado.</p>
+</ng-template>

@@ -8,7 +8,7 @@ import { RegisterExpense } from './expense.interface';
 export class ExpenseService {
   private readonly token: string = localStorage.getItem('token') || '';
   private readonly axiosInstance: AxiosInstance = axios.create({
-    baseURL: 'https://localhost:7115/api',
+    baseURL: 'https://localhost:7115/api/expense',
     headers: {
       Authorization: `Bearer ${this.token}`
     }
@@ -28,10 +28,10 @@ export class ExpenseService {
       receipt: expense.receipt,
       description: expense.description,
     }
-    return this.axiosInstance.post('/expense/create', body);
+    return this.axiosInstance.post('/create', body);
   }
   async getAllExpenses() {
-    return this.axiosInstance.get('/expense/gettAll');
+    return this.axiosInstance.get('/gettAll');
   }
   statusMapper(status: number) {
     return this.expenseStatus[status];

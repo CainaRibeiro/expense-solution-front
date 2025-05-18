@@ -28,4 +28,7 @@ export class SideNavComponent {
   navigateToRegisterExpense() {
     return this.router.navigate(['expenses/register'])
   }
+  navigateToReports() {
+    return this.router.navigate(['reports'])
+  }
 }
