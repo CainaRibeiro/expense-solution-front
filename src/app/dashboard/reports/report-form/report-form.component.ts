@@ -18,6 +18,8 @@ export class ReportFormComponent {
   }
 
   async generateReport() {
-    return this.reportService.generateReport(this.startAt, this.endAt);
+    await this.reportService.generateReport(this.startAt, this.endAt);
+    window.location.reload();
+    return;
   }
 }

@@ -28,7 +28,7 @@ export class ExpenseFormComponent {
         userId: userId,
         description: this.description,
         receipt: this.receipt,
-        type: this.type,
+        type: Number(this.type),
         value: this.value
       }
       await this.expenseService.registerExpense(body);
