@@ -24,6 +24,10 @@ export class ExpenseListComponent {
     return this.expenseService.statusMapper(Number(status));
   }
 
+  expenseType(status: string) {
+    return this.expenseService.typeMapper(Number(status));
+  }
+
   formatDate(date:Date) {
     const sanitizedDate = new Date(date);
     const day = sanitizedDate.getDate().toString().padStart(2, '0');

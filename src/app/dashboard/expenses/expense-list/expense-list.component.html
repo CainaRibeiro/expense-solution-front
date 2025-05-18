@@ -16,7 +16,7 @@
       <td>{{ expense.userId }}</td>
       <td>{{ expense.value | currency:'BRL' }}</td>
       <td>{{ expense.description }}</td>
-      <td>{{ expense.type }}</td>
+      <td>{{ expenseType(expense.type) }}</td>
       <td>{{ expenseStatus(expense.status) }}</td>
     </tr>
   </tbody>

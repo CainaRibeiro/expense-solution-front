@@ -1,6 +1,6 @@
 export interface RegisterExpense {
   userId: number;
-  type: string;
+  type: number;
   value: number;
   receipt: string;
   description: string;

@@ -10,7 +10,7 @@ import { RegisterExpense } from '../expense.interface';
   styleUrl: './expense-form.component.css'
 })
 export class ExpenseFormComponent {
-  public type: string = '';
+  public type: number = 0;
   public value: number = 0;
   public receipt: string = '';
   public description: string = '';

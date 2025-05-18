@@ -18,6 +18,11 @@ export class ExpenseService {
     1: 'Aprovado',
     2: 'Negado',
   }
+
+  private readonly expenseType: Record<number, string> = {
+    0: 'Reembolsável',
+    1: 'Não Reembolsável',
+  }
   constructor() { }
 
   async registerExpense(expense: RegisterExpense) {
@@ -31,9 +36,12 @@ export class ExpenseService {
     return this.axiosInstance.post('/create', body);
   }
   async getAllExpenses() {
-    return this.axiosInstance.get('/gettAll');
+    return this.axiosInstance.get('/notPending');
   }
   statusMapper(status: number) {
     return this.expenseStatus[status];
+  }
+  typeMapper(status: number) {
+    return this.expenseType[status];
   }
 }

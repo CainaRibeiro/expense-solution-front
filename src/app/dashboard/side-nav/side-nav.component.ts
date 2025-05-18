@@ -31,4 +31,7 @@ export class SideNavComponent {
   navigateToReports() {
     return this.router.navigate(['reports'])
   }
+  navigateToSolicitations() {
+    return this.router.navigate(['solicitations'])
+  }
 }

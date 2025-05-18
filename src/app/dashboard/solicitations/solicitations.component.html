@@ -1,0 +1,31 @@
+<h2 class="titulo">Solicitações</h2>
+
+<table *ngIf="solicitations.length > 0; else semSolicitacoes">
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Funcionário</th>
+      <th>Valor</th>
+      <th>Descrição</th>
+      <th>Tipo</th>
+      <th>Aprovar?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let s of solicitations">
+      <td>{{ s.createdAt | date:'dd/MM/yyyy HH:mm' }}</td>
+      <td>{{ s.userId }}</td>
+      <td>{{ s.value | currency:'BRL' }}</td>
+      <td>{{ s.description }}</td>
+      <td>{{ s.type }}</td>
+      <td>
+        <button class="btn-aprovar" (click)="approve(s)">✔</button>
+        <button class="btn-reprovar" (click)="reject(s)">✘</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #semSolicitacoes>
+  <p>Nenhuma solicitação encontrada.</p>
+</ng-template>

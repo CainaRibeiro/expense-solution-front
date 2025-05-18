@@ -7,7 +7,7 @@
   <div>
     <a href="#">Despesas</a>
     <button *ngIf="authService.canRegisterExpense()" (click)="navigateToRegisterExpense()">Cadastrar</button>
-    <a *ngIf="authService.canSeeRequests()">Solicitações</a>
+    <button *ngIf="authService.canSeeRequests()" (click)="navigateToSolicitations()">Solicitações</button>
     <button *ngIf="authService.canGetReport()" (click)="navigateToReports()">Relatórios</button>
   </div>
   <div>
