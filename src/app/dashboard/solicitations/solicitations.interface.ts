@@ -1,4 +1,5 @@
 export interface Solicications {
+  id: number;
   createdAt: Date;
   userId: number;
   value: number;

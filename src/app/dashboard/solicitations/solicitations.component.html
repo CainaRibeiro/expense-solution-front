@@ -17,7 +17,7 @@
       <td>{{ s.userId }}</td>
       <td>{{ s.value | currency:'BRL' }}</td>
       <td>{{ s.description }}</td>
-      <td>{{ s.type }}</td>
+      <td>{{ solicitationType(s.type) }}</td>
       <td>
         <button class="btn-aprovar" (click)="approve(s)">✔</button>
         <button class="btn-reprovar" (click)="reject(s)">✘</button>
