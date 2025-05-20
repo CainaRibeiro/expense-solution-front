@@ -7,11 +7,12 @@ export interface RegisterExpense {
 }
 
 export interface Expenses {
+  id: number;
   userId: number;
-  type: string;
+  type: number;
   value: number;
   receipt: string;
   description: string;
   createdAt: Date;
-  status: string;
+  status: number;
 }

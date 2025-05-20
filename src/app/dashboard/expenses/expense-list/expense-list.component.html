@@ -8,6 +8,7 @@
       <th>Descrição</th>
       <th>Tipo</th>
       <th>Status</th>
+      <th *ngIf="hasRefundableExpenses()">Ações</th>
     </tr>
   </thead>
   <tbody>
@@ -18,6 +19,9 @@
       <td>{{ expense.description }}</td>
       <td>{{ expenseType(expense.type) }}</td>
       <td>{{ expenseStatus(expense.status) }}</td>
+      <td *ngIf="isRefundable(expense)">
+        <button (click)="requestRefund(expense)">Solicitar Reembolso</button>
+      </td>
     </tr>
   </tbody>
 </table>

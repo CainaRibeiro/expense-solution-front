@@ -26,6 +26,36 @@
   </tbody>
 </table>
 
+<h2 class="titulo">Reembolsos</h2>
+
+<table *ngIf="refundSolicitations.length > 0; else semRefundSolicitations">
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Funcionário</th>
+      <th>Valor</th>
+      <th>Descrição</th>
+      <th>Aprovar?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let s of refundSolicitations">
+      <td>{{ s.createdAt | date:'dd/MM/yyyy HH:mm' }}</td>
+      <td>{{ s.userId }}</td>
+      <td>{{ s.value | currency:'BRL' }}</td>
+      <td>{{ s.description }}</td>
+      <td>
+        <button class="btn-aprovar" (click)="approveRefund(s)">✔</button>
+        <button class="btn-reprovar" (click)="rejectRefund(s)">✘</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 <ng-template #semSolicitacoes>
   <p>Nenhuma solicitação encontrada.</p>
+</ng-template>
+
+<ng-template #semRefundSolicitations>
+  <p>Nenhuma solicitação de reembolso encontrada.</p>
 </ng-template>

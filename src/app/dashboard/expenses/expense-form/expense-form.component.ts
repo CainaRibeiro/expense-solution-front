@@ -7,7 +7,7 @@ import { RegisterExpense } from '../expense.interface';
   selector: 'app-expense-form',
   imports: [FormsModule],
   templateUrl: './expense-form.component.html',
-  styleUrl: './expense-form.component.css'
+  styleUrl: './expense-form.component.css',
 })
 export class ExpenseFormComponent {
   public type: number = 0;
@@ -20,6 +20,10 @@ export class ExpenseFormComponent {
     this.expenseService = ExpenseService;
   }
 
+  private reload() {
+    return window.location.reload();
+  }
+
   async createExpense() {
     try {
       const userId = Number(localStorage.getItem('userId'));
@@ -29,11 +33,10 @@ export class ExpenseFormComponent {
         description: this.description,
         receipt: this.receipt,
         type: Number(this.type),
-        value: this.value
-      }
+        value: this.value,
+      };
       await this.expenseService.registerExpense(body);
-      window.location.reload();
-      return;
+      return this.reload();
     } catch (error) {
       console.log(error);
       return error;
