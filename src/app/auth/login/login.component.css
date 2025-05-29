@@ -1,14 +1,212 @@
+/* Reset e estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Barra lateral verde TOTALMENTE à esquerda */
+.barra-lateral {
+  position: fixed;
+  left: 0;           /* Totalmente à esquerda */
+  top: 0;            /* Do topo */
+  width: 80px;       /* Largura da barra */
+  height: 100vh;     /* Altura total da tela */
+  background-color: #28a745;
+  z-index: 0;        /* Agora fica no fundo */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  margin: 0;         /* Remove qualquer margem */
+  padding: 0;        /* Remove qualquer padding */
+}
+
+
+/* Container principal do formulário */
+.login-form {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 40px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 2000;
+}
+
+/* Título Login */
+.login-form h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Container dos inputs */
 .login-input {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
+  margin-bottom: 1.5rem;
 }
 
-.login-input > input {
-  max-height: 20px;
+/* Labels */
+.login-input p {
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
 }
 
+/* Campos de input */
+.login-input input[type="email"],
+.login-input input[type="password"] {
+  width: 100%;
+  height: 45px;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  padding: 0 15px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
+}
+
+/* Efeito focus nos inputs */
+.login-input input[type="email"]:focus,
+.login-input input[type="password"]:focus {
+  border-color: #1e7e34;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+}
+
+/* Container do botão */
 .login-button {
-  display: flex;
-  justify-content: flex-end;
+  text-align: center;
+  margin-top: 2rem;
 }
+
+/* Botão Submit */
+.login-button input[type="submit"] {
+  background-color: #03260b;
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+/* Efeito hover no botão */
+.login-button input[type="submit"]:hover {
+  background-color: #042d0e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(1, 17, 5, 0.3);
+}
+
+/* Efeito active no botão */
+.login-button input[type="submit"]:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.2);
+}
+
+/* Design responsivo */
+@media (max-width: 768px) {
+  .barra-lateral {
+    width: 60px;
+    left: 0;  /* Garantir que continue à esquerda */
+  }
+  
+  .login-form {
+    width: 90%;
+    max-width: 350px;
+    padding: 30px 20px;
+  }
+  
+  .login-form h1 {
+    font-size: 2rem;
+  }
+  
+  .login-input input[type="email"],
+  .login-input input[type="password"] {
+    height: 40px;
+  }
+  
+  .login-button input[type="submit"] {
+    padding: 10px 30px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .barra-lateral {
+    width: 40px;
+    left: 0;  /* Garantir que continue à esquerda */
+  }
+  
+  .login-form {
+    width: 95%;
+    padding: 25px 15px;
+  }
+  
+  .login-form h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Animação suave para o formulário */
+.login-form {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Garantir que a barra fique grudada na borda esquerda */
+.barra-lateral {
+  border-left: none;
+  border-right: none;
+}
+
+/* Remover qualquer espaçamento do body que possa afetar a posição */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo adicional para melhor aparência */
+.login-input input[type="email"]::placeholder,
+.login-input input[type="password"]::placeholder {
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* Efeito de loading no botão (opcional) */
+.login-button input[type="submit"]:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.login-button input[type="submit"]:disabled:hover {
+  background-color: #6c757d;
+  transform: none;
+  box-shadow: none;
+}
+

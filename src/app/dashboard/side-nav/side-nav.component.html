@@ -1,16 +1,25 @@
-<div class="main-content">
-  <h1>Bem-vindo ao painel</h1>
-  <p>Aqui fica o conteúdo da página.</p>
-</div>
-
 <nav *ngIf="canSeeOptions()">
-  <div>
+  <!-- Seção superior com imagem -->
+  <div class="nav-header">
+    <div class="image-container">
+      <img src="https://iili.io/3m7MX19.jpg" alt="Expense Solution Logo" class="sidebar-image">
+
+
+
+
+    </div>
+  </div>
+  
+  <!-- Seção de navegação -->
+  <div class="nav-menu">
     <a href="#">Despesas</a>
     <button *ngIf="authService.canRegisterExpense()" (click)="navigateToRegisterExpense()">Cadastrar</button>
     <button *ngIf="authService.canSeeRequests()" (click)="navigateToSolicitations()">Solicitações</button>
     <button *ngIf="authService.canGetReport()" (click)="navigateToReports()">Relatórios</button>
   </div>
-  <div>
+  
+  <!-- Seção inferior com usuário -->
+  <div class="nav-footer">
     <p>{{ getUsername() }}</p>
     <button (click)="authService.logout()">logout</button>
   </div>

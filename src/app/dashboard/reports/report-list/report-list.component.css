@@ -1,0 +1,423 @@
+/* Importar fonte Ubuntu */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;600;700&display=swap');
+
+/* Aplicar Ubuntu como fonte padrão global */
+* {
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+/* Container principal para os relatórios com centralização perfeita */
+.reports-container {
+  margin-left: 280px; /* Espaço para a sidebar */
+  width: calc(100vw - 280px);
+  min-height: 100vh;
+  background-color: #f5f1eb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Seção de relatórios centralizada */
+.reports-section {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* Título da seção */
+.reports-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2d5a4a;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+/* Container da tabela centralizado */
+.table-container {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeInTable 0.6s ease-out;
+}
+
+/* Estilos da tabela */
+table {
+  width: 100%;
+  max-width: 900px;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: transparent;
+  font-family: 'Ubuntu', sans-serif !important;
+  margin: 0 auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-right: 20%;
+}
+
+/* Cabeçalho da tabela */
+table thead th {
+  padding: 1.5rem 2rem;
+  text-align: center;
+  background-color: #b8d4c7;
+  color: #2d3748;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+/* Bordas arredondadas para o cabeçalho */
+table thead tr:first-child th:first-child {
+  border-top-left-radius: 15px;
+}
+
+table thead tr:first-child th:last-child {
+  border-top-right-radius: 15px;
+}
+
+/* Células do corpo da tabela */
+table tbody td {
+  padding: 1.5rem 2rem;
+  text-align: center;
+  background-color: #f8f9fa;
+  color: #2d3748;
+  font-size: 1.1rem;
+  border: none;
+  border-top: 1px solid #dee2e6;
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+/* Alternância de cores para linhas */
+table tbody tr:nth-child(even) td {
+  background-color: #e9ecef;
+}
+
+/* Bordas arredondadas para a última linha */
+table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 15px;
+}
+
+table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 15px;
+}
+
+/* Efeito hover nas linhas da tabela */
+table tbody tr:hover td {
+  background-color: #d1ecf1;
+  transition: background-color 0.2s ease;
+  transform: scale(1.02);
+}
+
+/* Efeito hover especial para primeira e última célula da linha */
+table tbody tr:hover td:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+table tbody tr:hover td:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Mensagem quando não há relatórios */
+p {
+  text-align: center;
+  color: #6c757d;
+  font-style: italic;
+  margin: 2rem 0;
+  font-size: 1.2rem;
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+/* Estilo específico para colunas */
+table th:nth-child(1),
+table td:nth-child(1) {
+  min-width: 200px; /* Período */
+}
+
+table th:nth-child(2),
+table td:nth-child(2) {
+  min-width: 200px; /* Total de despesas */
+}
+
+table th:nth-child(3),
+table td:nth-child(3) {
+  min-width: 200px; /* Total de reembolsos */
+}
+
+/* Alinhamento para valores monetários */
+table td:nth-child(2),
+table td:nth-child(3) {
+  font-weight: 600;
+  color: #2d5a4a;
+}
+
+/* Animação suave para a tabela */
+@keyframes fadeInTable {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsividade para laptops/notebooks (1024px - 1400px) */
+@media (max-width: 1400px) and (min-width: 1024px) {
+  .reports-container {
+    margin-left: 260px;
+    width: calc(100vw - 260px);
+    padding: 1.5rem;
+  }
+  
+  .table-container {
+    max-width: 900px;
+    padding: 1.5rem;
+  }
+  
+  .reports-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* Responsividade para tablets (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .reports-container {
+    margin-left: 240px;
+    width: calc(100vw - 240px);
+    padding: 1.5rem;
+  }
+  
+  .table-container {
+    max-width: 800px;
+    padding: 1.5rem;
+  }
+  
+  table {
+    border-radius: 12px;
+  }
+  
+  table thead tr:first-child th:first-child {
+    border-top-left-radius: 12px;
+  }
+
+  table thead tr:first-child th:last-child {
+    border-top-right-radius: 12px;
+  }
+
+  table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+  }
+
+  table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 12px;
+  }
+  
+  .reports-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Responsividade para tablets pequenos e smartphones grandes (480px - 768px) */
+@media (max-width: 768px) and (min-width: 480px) {
+  .reports-container {
+    margin-left: 0;
+    width: 100vw;
+    padding: 1rem;
+    justify-content: flex-start;
+    padding-top: 2rem;
+  }
+  
+  .reports-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .table-container {
+    max-width: 95%;
+    padding: 1rem;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    min-width: 600px;
+  }
+  
+  table thead th,
+  table tbody td {
+    padding: 1rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  table thead tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+  }
+
+  table thead tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+  }
+
+  table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+  }
+
+  table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+  }
+}
+
+/* Responsividade para smartphones (até 480px) */
+@media (max-width: 480px) {
+  .reports-container {
+    margin-left: 0;
+    width: 100vw;
+    padding: 0.5rem;
+    justify-content: flex-start;
+    padding-top: 1rem;
+  }
+  
+  .reports-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .table-container {
+    max-width: 100%;
+    padding: 0.8rem;
+    overflow-x: auto;
+  }
+  
+  table {
+    font-size: 0.8rem;
+    border-radius: 8px;
+    min-width: 500px;
+  }
+  
+  table thead th,
+  table tbody td {
+    padding: 0.8rem 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  table thead tr:first-child th:first-child {
+    border-top-left-radius: 8px;
+  }
+
+  table thead tr:first-child th:last-child {
+    border-top-right-radius: 8px;
+  }
+
+  table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 8px;
+  }
+
+  table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 8px;
+  }
+}
+
+/* Estilo para destacar valores positivos/negativos */
+.positive-value {
+  color: #28a745;
+  font-weight: bold;
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+.negative-value {
+  color: #dc3545;
+  font-weight: bold;
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+/* Container wrapper para melhor organização */
+.reports-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Força a fonte Ubuntu em todos os elementos */
+.reports-container *,
+.reports-section *,
+.table-container *,
+table *,
+.reports-wrapper *,
+h2, p {
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+/* Garantia adicional para elementos específicos */
+h1, h2, h3, h4, h5, h6,
+span, div, th, td, p {
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+/* Centralização absoluta para desktop */
+@media (min-width: 769px) {
+  .reports-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .reports-section {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+/* Estados de loading */
+.loading-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  color: #6c757d;
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+.loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #2d5a4a;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

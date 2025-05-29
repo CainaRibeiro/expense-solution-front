@@ -1,0 +1,450 @@
+/* Importar fonte Ubuntu */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;600;700&display=swap');
+
+/* Aplicar Ubuntu como fonte padrão global */
+* {
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+/* Seção de despesas cadastradas com centralização perfeita */
+.expenses-section {
+  margin-left: 280px; /* Espaço para a sidebar */
+  width: calc(100vw - 280px);
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Título da seção */
+.expenses-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2d5a4a;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+/* Container da tabela centralizado */
+.table-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeInTable 0.6s ease-out;
+}
+
+/* Tabela de despesas */
+table {
+  width: 100%;
+  max-width: 1100px;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: transparent;
+  font-family: 'Ubuntu', sans-serif !important;
+  margin: 0 auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-left: 25%;
+}
+
+/* Cabeçalho da tabela */
+table thead th {
+  padding: 1.2rem 1.5rem;
+  text-align: center;
+  background-color: #2d5a4a;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+/* Bordas arredondadas específicas para o cabeçalho */
+table thead tr:first-child th:first-child {
+  border-top-left-radius: 15px;
+}
+
+table thead tr:first-child th:last-child {
+  border-top-right-radius: 15px;
+}
+
+/* Células do corpo da tabela */
+table tbody td {
+  padding: 1.2rem 1.5rem;
+  text-align: center;
+  background-color: #f8f9fa;
+  color: #2d3748;
+  font-size: 1rem;
+  border: none;
+  border-top: 1px solid #dee2e6;
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+/* Alternância de cores para linhas */
+table tbody tr:nth-child(even) td {
+  background-color: #e9ecef;
+}
+
+/* Bordas arredondadas para a última linha */
+table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 15px;
+}
+
+table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 15px;
+}
+
+/* Estilo para o botão de ação */
+table tbody td button {
+  background-color: #2d5a4a;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+/* Efeito hover no botão */
+table tbody td button:hover {
+  background-color: #1e3a32;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(45, 90, 74, 0.3);
+  border-radius: 15px;
+}
+
+/* Efeito active no botão */
+table tbody td button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(45, 90, 74, 0.2);
+}
+
+/* Efeito hover nas linhas da tabela */
+table tbody tr:hover td {
+  background-color: #d1ecf1;
+  transition: background-color 0.2s ease;
+  transform: scale(1.01);
+}
+
+/* Efeito hover especial para primeira e última célula da linha */
+table tbody tr:hover td:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+table tbody tr:hover td:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Animação suave para a tabela */
+@keyframes fadeInTable {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsividade para laptops/notebooks (1024px - 1400px) */
+@media (max-width: 1400px) and (min-width: 1024px) {
+  .expenses-section {
+    margin-left: 260px;
+    width: calc(100vw - 260px);
+    padding: 1.5rem;
+  }
+  
+  .table-container {
+    max-width: 1000px;
+    padding: 1.5rem;
+  }
+  
+  .expenses-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* Responsividade para tablets (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .expenses-section {
+    margin-left: 240px;
+    width: calc(100vw - 240px);
+    padding: 1.5rem;
+  }
+  
+  .table-container {
+    max-width: 900px;
+    padding: 1.5rem;
+  }
+  
+  table {
+    border-radius: 12px;
+  }
+  
+  table thead tr:first-child th:first-child {
+    border-top-left-radius: 12px;
+  }
+
+  table thead tr:first-child th:last-child {
+    border-top-right-radius: 12px;
+  }
+
+  table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+  }
+
+  table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 12px;
+  }
+  
+  .expenses-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Responsividade para tablets pequenos e smartphones grandes (480px - 768px) */
+@media (max-width: 768px) and (min-width: 480px) {
+  .expenses-section {
+    margin-left: 0;
+    width: 100vw;
+    padding: 1rem;
+    justify-content: flex-start;
+    padding-top: 2rem;
+  }
+  
+  .expenses-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .table-container {
+    max-width: 95%;
+    padding: 1rem;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    min-width: 800px;
+  }
+  
+  table thead th,
+  table tbody td {
+    padding: 0.8rem 0.6rem;
+    font-size: 0.85rem;
+  }
+  
+  table thead tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+  }
+
+  table thead tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+  }
+
+  table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+  }
+
+  table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+  }
+}
+
+/* Responsividade para smartphones (até 480px) */
+@media (max-width: 480px) {
+  .expenses-section {
+    margin-left: 0;
+    width: 100vw;
+    padding: 0.5rem;
+    justify-content: flex-start;
+    padding-top: 1rem;
+  }
+  
+  .expenses-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .table-container {
+    max-width: 100%;
+    padding: 0.8rem;
+    overflow-x: auto;
+  }
+  
+  table {
+    font-size: 0.8rem;
+    border-radius: 8px;
+    min-width: 700px;
+  }
+  
+  table thead th,
+  table tbody td {
+    padding: 0.6rem 0.4rem;
+    font-size: 0.75rem;
+  }
+  
+  table tbody td button {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 8px;
+  }
+  
+  table thead tr:first-child th:first-child {
+    border-top-left-radius: 8px;
+  }
+
+  table thead tr:first-child th:last-child {
+    border-top-right-radius: 8px;
+  }
+
+  table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 8px;
+  }
+
+  table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 8px;
+  }
+}
+
+/* Estilo específico para colunas */
+table th:nth-child(1),
+table td:nth-child(1) {
+  min-width: 120px; /* Data */
+}
+
+table th:nth-child(2),
+table td:nth-child(2) {
+  min-width: 150px; /* Funcionário */
+}
+
+table th:nth-child(3),
+table td:nth-child(3) {
+  min-width: 100px; /* Valor */
+}
+
+table th:nth-child(4),
+table td:nth-child(4) {
+  min-width: 200px; /* Descrição */
+}
+
+table th:nth-child(5),
+table td:nth-child(5) {
+  min-width: 120px; /* Tipo */
+}
+
+table th:nth-child(6),
+table td:nth-child(6) {
+  min-width: 100px; /* Status */
+}
+
+table th:nth-child(7),
+table td:nth-child(7) {
+  min-width: 120px; /* Ações */
+}
+
+/* Ajuste para o layout geral considerando a sidebar */
+.main-content {
+  margin-left: 280px;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container principal com centralização */
+.content-with-sidebar {
+  margin-left: 280px;
+  width: calc(100vw - 280px);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Força a fonte Ubuntu em todos os elementos */
+.expenses-section *,
+.table-container *,
+table *,
+.main-content *,
+.content-with-sidebar *,
+h2, th, td, button {
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+/* Garantia adicional para elementos específicos */
+h1, h2, h3, h4, h5, h6,
+span, div, th, td, button, p {
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+/* Centralização absoluta para desktop */
+@media (min-width: 769px) {
+  .expenses-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+}
+
+/* Estados de loading */
+.loading-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  color: #6c757d;
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+.loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #2d5a4a;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Mensagem quando não há dados */
+.no-data-message {
+  text-align: center;
+  color: #6c757d;
+  font-style: italic;
+  margin: 2rem 0;
+  font-size: 1.1rem;
+  font-family: 'Ubuntu', sans-serif !important;
+}
