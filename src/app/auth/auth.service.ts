@@ -33,7 +33,7 @@ export class AuthService {
   canRegisterExpense() {
     const role = localStorage.getItem('role');
     if (!role) return false;
-    return this.roles[0] === role || this.roles[1] === role;
+    return this.roles[0] === role || this.roles[1] === role || this.roles[2] === role;
   }
   canGetReport() {
     const role = localStorage.getItem('role');
@@ -49,6 +49,10 @@ export class AuthService {
     const role = localStorage.getItem('role');
     if (!role) return false;
     return this.roles[2] == role;
+  }
+  isEmployee() {
+    const role = localStorage.getItem('role');
+    return this.roles[2] === role;
   }
   logout() {
     localStorage.removeItem('token');

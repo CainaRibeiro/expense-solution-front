@@ -12,7 +12,6 @@
   
   <!-- Seção de navegação -->
   <div class="nav-menu">
-    <a href="#">Despesas</a>
     <button *ngIf="authService.canRegisterExpense()" (click)="navigateToRegisterExpense()">Cadastrar</button>
     <button *ngIf="authService.canSeeRequests()" (click)="navigateToSolicitations()">Solicitações</button>
     <button *ngIf="authService.canGetReport()" (click)="navigateToReports()">Relatórios</button>

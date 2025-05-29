@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ExpenseService } from '../expense.service';
 import { RegisterExpense } from '../expense.interface';
+import { AuthService } from '../../../auth/auth.service';
 
 @Component({
   selector: 'app-expense-form',
@@ -16,7 +17,7 @@ export class ExpenseFormComponent {
   public description: string = '';
 
   private readonly expenseService: ExpenseService;
-  constructor(ExpenseService: ExpenseService) {
+  constructor(ExpenseService: ExpenseService, private authService: AuthService) {
     this.expenseService = ExpenseService;
   }
 
@@ -41,5 +42,8 @@ export class ExpenseFormComponent {
       console.log(error);
       return error;
     }
+  }
+  canSeeForm() {
+    return !this.authService.isEmployee()
   }
 }

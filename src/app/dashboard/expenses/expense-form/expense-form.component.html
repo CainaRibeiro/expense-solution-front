@@ -1,4 +1,4 @@
-<form (ngSubmit)="createExpense()" class="expense-form">
+<form (ngSubmit)="createExpense()" class="expense-form" *ngIf="canSeeForm()">
   <h1>Cadastrar Despesa</h1>
   <div class="expense-input">
     <label for="type">Reembolsável:</label>
