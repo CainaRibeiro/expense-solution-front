@@ -3,6 +3,7 @@ import { Expenses } from '../expense.interface';
 import { ExpenseService } from '../expense.service';
 import { CommonModule } from '@angular/common';
 import { RefundServiceService } from '../../../services/refunds/refund-service.service';
+import { AuthService } from '../../../auth/auth.service';
 
 @Component({
   selector: 'app-expense-list',
@@ -16,7 +17,8 @@ export class ExpenseListComponent {
 
   constructor(
     private expenseService: ExpenseService,
-    private refundService: RefundServiceService
+    private refundService: RefundServiceService,
+    private authService: AuthService
   ) {}
 
   async getAll() {
@@ -51,6 +53,9 @@ export class ExpenseListComponent {
 
   async requestRefund(expense: Expenses) {
     return this.refundService.generateRefund(expense.id);
+  }
+  canSeeRefundButton() {
+    return this.authService.isEmployee()
   }
   async ngOnInit() {
     await this.getAll();

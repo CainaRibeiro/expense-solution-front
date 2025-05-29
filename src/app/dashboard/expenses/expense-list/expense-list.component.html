@@ -19,7 +19,7 @@
       <td>{{ expense.description }}</td>
       <td>{{ expenseType(expense.type) }}</td>
       <td>{{ expenseStatus(expense.status) }}</td>
-      <td *ngIf="isRefundable(expense)">
+      <td *ngIf="isRefundable(expense) && canSeeRefundButton()">
         <button (click)="requestRefund(expense)">Solicitar Reembolso</button>
       </td>
     </tr>

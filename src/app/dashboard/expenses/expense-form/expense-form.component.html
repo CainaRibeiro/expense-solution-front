@@ -1,4 +1,4 @@
-<form (ngSubmit)="createExpense()" class="expense-form" *ngIf="canSeeForm()">
+<form (ngSubmit)="createExpense()" class="expense-form" *ngIf="showForm">
   <h1>Cadastrar Despesa</h1>
   <div class="expense-input">
     <label for="type">Reembolsável:</label>
@@ -9,7 +9,7 @@
     <p>Valor: </p>
     <input [(ngModel)]="value" type="number" name="value">
     <p>Comprovante: </p>
-    <input [(ngModel)]="receipt" type="text" name="rececipt">
+    <input [(ngModel)]="receipt" type="text" name="receipt">
   </div>
   <div class="expense-input">
     <p>Descrição: </p>

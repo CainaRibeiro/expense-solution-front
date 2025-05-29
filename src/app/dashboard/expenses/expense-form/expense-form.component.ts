@@ -3,10 +3,11 @@ import { FormsModule } from '@angular/forms';
 import { ExpenseService } from '../expense.service';
 import { RegisterExpense } from '../expense.interface';
 import { AuthService } from '../../../auth/auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-expense-form',
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './expense-form.component.html',
   styleUrl: './expense-form.component.css',
 })
@@ -15,6 +16,7 @@ export class ExpenseFormComponent {
   public value: number = 0;
   public receipt: string = '';
   public description: string = '';
+  public showForm: boolean = true;
 
   private readonly expenseService: ExpenseService;
   constructor(ExpenseService: ExpenseService, private authService: AuthService) {
@@ -43,7 +45,8 @@ export class ExpenseFormComponent {
       return error;
     }
   }
-  canSeeForm() {
-    return !this.authService.isEmployee()
+
+  ngOnInit() {
+    this.showForm = !this.authService.isEmployee()
   }
 }
